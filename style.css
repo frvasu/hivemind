@@ -13,7 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Navbar */
+/* Navbar Style */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -50,7 +50,7 @@ body {
     color: #4fc3f7;
 }
 
-/* Hero Section */
+/* Hero Section Style */
 .hero-section {
     min-height: 100vh;
     display: flex;
@@ -102,7 +102,7 @@ body {
     margin-bottom: 40px;
 }
 
-/* Buttons */
+/* Buttons Glow Styling */
 .hero-buttons {
     display: flex;
     gap: 20px;
@@ -140,7 +140,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Services Section */
+/* Services Section Style */
 .services-section {
     padding: 120px 40px;
     text-align: center;
@@ -213,7 +213,7 @@ body {
     width: fit-content;
 }
 
-/* About Section */
+/* About Section Style */
 .about-section {
     padding: 100px 40px;
     max-width: 1200px;
@@ -270,7 +270,7 @@ body {
     box-shadow: 0 0 25px rgba(101, 31, 255, 0.3);
 }
 
-/* Admin Section */
+/* Admin Panel Style */
 .admin-section {
     padding: 100px 40px;
     display: flex;
@@ -344,12 +344,11 @@ body {
     background: rgba(255, 255, 255, 0.05);
     color: rgba(255, 255, 255, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    cursor: not-allowed;
     padding: 12px;
     border-radius: 6px;
 }
 
-/* Footer & Legal */
+/* Footer Style */
 .footer {
     padding: 60px 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.03);
@@ -379,7 +378,7 @@ body {
 }
 
 /* ==========================================================================
-   SCROLL REVEAL ENGINE
+   NEW FEATURES: SCROLL REVEAL ENGINE STYLES
    ========================================================================== */
 .reveal {
     opacity: 0;
@@ -394,7 +393,7 @@ body {
     transform: translateY(0);
 }
 
-/* Responsive Fixes */
+/* Responsive Optimization */
 @media (max-width: 768px) {
     .navbar { padding: 20px; }
     .menu-links { display: none; }
