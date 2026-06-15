@@ -377,23 +377,7 @@ body {
     justify-content: space-between;
 }
 
-/* ==========================================================================
-   NEW FEATURES: SCROLL REVEAL ENGINE STYLES
-   ========================================================================== */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.9s cubic-bezier(0.215, 0.610, 0.355, 1), 
-                transform 0.9s cubic-bezier(0.215, 0.610, 0.355, 1);
-    will-change: opacity, transform;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive Optimization */
+/* Responsive Constraints */
 @media (max-width: 768px) {
     .navbar { padding: 20px; }
     .menu-links { display: none; }
