@@ -1,26 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     
-    // 1. Scroll Reveal Animation Engine
-    const revealElements = document.querySelectorAll(".reveal");
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Section aate hi active class trigger hogi
-                entry.target.classList.add("active");
-                // Memory/CPU utilization save karne ke liye unobserve kiya
-                observer.unobserve(entry.target); 
-            }
-        });
-    }, {
-        threshold: 0.12 // Section jab screen par 12% enter karega tab chalega
-    });
-
-    revealElements.forEach(element => {
-        revealObserver.observe(element);
-    });
-
-    // 2. Real-time Live Footer Clock
+    // Real-time Live Footer Clock
     const timestampNode = document.getElementById("timestamp-val");
     if (timestampNode) {
         setInterval(() => {
