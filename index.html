@@ -78,15 +78,15 @@
         <div class="admin-panel">
             <div class="panel-header">
                 <h3>🔒 Admin Control Room</h3>
-                <span class="panel-status">Status: Static Mode</span>
+                <span id="panel-mode-text" class="panel-status">Status: Checking...</span>
             </div>
             <div class="panel-body">
-                <p class="panel-desc">Authentication required to manage dynamic configurations and live bot features.</p>
+                <p class="panel-desc">Authentication required to manage dynamic configurations, update owner names, and live bot features.</p>
                 <div class="form-group">
                     <label>Enter Secret Key</label>
-                    <input type="password" value="hivemind2026" readonly>
+                    <input type="password" id="admin-secret-input" value="hivemind2026">
                 </div>
-                <button class="btn panel-btn" disabled>Dashboard Locked</button>
+                <button id="admin-action-btn" class="btn panel-btn">Dashboard Locked</button>
             </div>
         </div>
     </section>
@@ -95,11 +95,12 @@
         <div class="footer-content">
             <p class="legal-desc">© 2026 HiveMind Inc. All rights reserved. Designed and developed securely. Unauthorized duplication of UI layout, asset files, or source scripts is strictly prohibited under terms of digital property protection laws.</p>
             <div class="footer-meta">
-                <span>System Timestamp: <strong id="timestamp-val">2026-06-16 01:38:09</strong></span>
+                <span>System Timestamp: <strong id="timestamp-val">2026-06-16 01:53:00</strong></span>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="app.js"></script>
+    <script src="admin.js"></script>
 </body>
 </html>
