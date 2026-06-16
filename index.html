@@ -230,67 +230,68 @@
             <span class="section-label">Get In Touch</span>
             <h2 class="section-title reveal" style="text-align:center">Start Your <span>Project</span></h2>
             <p class="section-desc reveal" style="text-align:center;margin:0 auto 0">Tell us about your project and we'll get back to you within 24 hours.</p>
-            <div class="form-wrapper reveal">
-                <div id="formArea">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Full Name *</label>
-                            <input type="text" id="fName" placeholder="Your name">
-                        </div>
-                        <div class="form-group">
-                            <label>Discord ID *</label>
-                            <input type="text" id="fDiscord" placeholder="user#0000 or username">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" id="fEmail" placeholder="your@email.com">
-                        </div>
-                        <div class="form-group">
-                            <label>Phone / WhatsApp</label>
-                            <input type="text" id="fPhone" placeholder="+91 XXXXXXXXXX">
-                        </div>
+            
+            <form action="https://formspree.io/f/xaqzkyny" method="POST" class="form-wrapper reveal">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" name="name" id="fName" placeholder="Your name" required>
                     </div>
                     <div class="form-group">
-                        <label>Service Needed *</label>
-                        <select id="fService">
-                            <option value="">Select a service...</option>
-                            <option value="website">Website Development</option>
-                            <option value="ui">UI Design</option>
-                            <option value="discord-bot">Discord Bot</option>
-                            <option value="automation">Automation</option>
-                            <option value="portfolio">Portfolio</option>
-                            <option value="other">Other</option>
-                        </select>
+                        <label>Discord ID *</label>
+                        <input type="text" name="discord" id="fDiscord" placeholder="user#0000 or username" required>
                     </div>
-                    <div class="form-group">
-                        <label>Budget Range</label>
-                        <select id="fBudget">
-                            <option value="">Select budget...</option>
-                            <option value="under-500">Under ₹500</option>
-                            <option value="500-2000">₹500 – ₹2,000</option>
-                            <option value="2000-5000">₹2,000 – ₹5,000</option>
-                            <option value="5000+">₹5,000+</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Project Details *</label>
-                        <textarea id="fDetails" rows="5" placeholder="Describe your project, requirements, deadline..."></textarea>
-                    </div>
-                    <button class="btn-primary" style="width:100%;padding:.9rem;justify-content:center;font-size:1rem" onclick="submitForm()">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/></svg>
-                        Send Enquiry
-                    </button>
                 </div>
-                <div class="form-success" id="formSuccess">
-                    <div style="font-size:3rem;margin-bottom:1rem">🚀</div>
-                    <h3>Enquiry Sent!</h3>
-                    <p style="color:var(--muted);margin-top:.5rem">We'll get back to you within 24 hours. Check your Discord!</p>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" id="fEmail" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone / WhatsApp</label>
+                        <input type="text" name="phone" id="fPhone" placeholder="+91 XXXXXXXXXX">
+                    </div>
                 </div>
+                <div class="form-group">
+                    <label>Service Needed *</label>
+                    <select name="service" id="fService" required>
+                        <option value="">Select a service...</option>
+                        <option value="website">Website Development</option>
+                        <option value="ui">UI Design</option>
+                        <option value="discord-bot">Discord Bot</option>
+                        <option value="automation">Automation</option>
+                        <option value="portfolio">Portfolio</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Budget Range</label>
+                    <select name="budget" id="fBudget">
+                        <option value="">Select budget...</option>
+                        <option value="under-500">Under ₹500</option>
+                        <option value="500-2000">₹500 – ₹2,000</option>
+                        <option value="2000-5000">₹2,000 – ₹5,000</option>
+                        <option value="5000+">₹5,000+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Project Details *</label>
+                    <textarea name="details" id="fDetails" rows="5" placeholder="Describe your project, requirements, deadline..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%;padding:.9rem;justify-content:center;font-size:1rem">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/></svg>
+                    Send Enquiry
+                </button>
+            </form>
+
+            <div class="form-success" id="formSuccess" style="display:none;">
+                <div style="font-size:3rem;margin-bottom:1rem">🚀</div>
+                <h3>Enquiry Sent!</h3>
+                <p style="color:var(--muted);margin-top:.5rem">We'll get back to you within 24 hours. Check your Discord!</p>
             </div>
         </div>
     </section>
+
 
     <!-- ===== FOOTER ===== -->
     <footer>
