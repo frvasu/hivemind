@@ -260,4 +260,3 @@ document.addEventListener('DOMContentLoaded', () => {
         adminBox.classList.add('admin-neon-theme');
     }
 });
-                          
