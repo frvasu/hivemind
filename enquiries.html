@@ -3,30 +3,10 @@
 <head>
     <style>
         body { background: #1a1a1a; color: #fff; font-family: sans-serif; display: flex; justify-content: center; padding: 20px; }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 30px;
-            width: 100%;
-            max-width: 800px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
-        }
+        .glass-panel { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 30px; width: 100%; max-width: 900px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8); }
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { padding: 15px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-        .waterdrop-btn {
-            background: rgba(0, 242, 255, 0.2);
-            border: 1px solid #00f2ff;
-            color: #00f2ff;
-            padding: 10px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: 0.3s;
-            overflow: hidden;
-            position: relative;
-        }
-        .waterdrop-btn:hover { background: #00f2ff; color: #000; box-shadow: 0 0 20px #00f2ff; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); font-size: 14px; }
+        .waterdrop-btn { background: rgba(0, 242, 255, 0.2); border: 1px solid #00f2ff; color: #00f2ff; padding: 10px 20px; border-radius: 50px; cursor: pointer; margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -35,11 +15,9 @@
     <h2>Client Enquiries</h2>
     <table>
         <thead>
-            <tr><th>Name</th><th>Submission Time</th><th>Details</th></tr>
+            <tr><th>Name</th><th>Contact (Email/Discord)</th><th>Service/Budget</th><th>Details</th></tr>
         </thead>
-        <tbody id="enquiryTable">
-            <!-- Data yahan dynamic aayega -->
-        </tbody>
+        <tbody id="enquiryTable"></tbody>
     </table>
     <button class="waterdrop-btn" onclick="location.reload()">Refresh Data</button>
 </div>
@@ -56,16 +34,22 @@
             const table = document.getElementById('enquiryTable');
             
             rows.forEach(row => {
-                // Sheet ke columns: Name(0), Discord(1), Email(2), Phone(3), Service(4), Budget(5), Details(6)
                 const name = row.c[0]?.v || "-";
+                const discord = row.c[1]?.v || "-";
+                const email = row.c[2]?.v || "-";
+                const phone = row.c[3]?.v || "-";
+                const service = row.c[4]?.v || "-";
+                const budget = row.c[5]?.v || "-";
                 const details = row.c[6]?.v || "-";
-                const time = "New Entry"; // Sheet se timestamp nikalne ke liye format alag hota hai
 
-                table.innerHTML += `<tr><td>${name}</td><td>${time}</td><td>${details}</td></tr>`;
+                table.innerHTML += `<tr>
+                    <td>${name}</td>
+                    <td>${email}<br><small>${discord}</small></td>
+                    <td>${service}<br><b>₹${budget}</b></td>
+                    <td>${details}</td>
+                </tr>`;
             });
-        })
-        .catch(err => console.error("Error loading data:", err));
+        });
 </script>
-
 </body>
 </html>
