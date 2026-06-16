@@ -24,14 +24,12 @@ function renderAdmin(){
         <p>Enter your password to access the website editor</p>
         <input type="password" id="adminPass" placeholder="Password" onkeydown="if(event.key==='Enter')adminLogin()" style="text-align:center">
         <button class="admin-save-btn" onclick="adminLogin()" style="width:100%">Login</button>
-        <p style="font-size:.75rem;color:var(--muted);margin-top:.5rem">Default: hivemind2026</p>
         <div class="admin-msg" id="loginMsg"></div>
       </div>
     `;
     return;
   }
   body.innerHTML=`
-    <!-- OWNER SECTION -->
     <div class="admin-section">
       <h3>👤 Owner Info</h3>
       <div class="form-row" style="margin-bottom:0">
@@ -51,7 +49,6 @@ function renderAdmin(){
       <div class="admin-msg" id="ownerMsg"></div>
     </div>
 
-    <!-- SERVICES SECTION -->
     <div class="admin-section">
       <h3>🌐 Services</h3>
       <div id="adminServicesList"></div>
@@ -60,7 +57,6 @@ function renderAdmin(){
       <div class="admin-msg" id="servicesMsg"></div>
     </div>
 
-    <!-- PRICING SECTION -->
     <div class="admin-section">
       <h3>💰 Pricing Plans</h3>
       <div id="adminPricingList"></div>
@@ -69,7 +65,6 @@ function renderAdmin(){
       <div class="admin-msg" id="pricingMsg"></div>
     </div>
 
-    <!-- PROJECTS SECTION -->
     <div class="admin-section">
       <h3>🚀 Projects</h3>
       <div id="adminProjectsList"></div>
@@ -78,7 +73,6 @@ function renderAdmin(){
       <div class="admin-msg" id="projectsMsg"></div>
     </div>
 
-    <!-- CHANGE PASSWORD -->
     <div class="admin-section">
       <h3>🔑 Change Password</h3>
       <div class="form-row">
@@ -99,6 +93,9 @@ function renderAdmin(){
   renderAdminPricing();
   renderAdminProjects();
 }
+
+// Baaki sabhi functions (renderAdminServices, addService, etc.) purane jaise hi rahenge...
+// Maine neeche wahi puraane functions copy kiye hain taaki koi part miss na ho.
 
 function renderAdminServices(){
   const c=document.getElementById('adminServicesList');
@@ -173,7 +170,6 @@ function addPricing(){
   siteData.pricing.push({name:'Custom',price:'999',currency:'₹',period:'per project',featured:false,features:[{text:'Custom Feature',active:true}]});
   renderAdminPricing();
 }
-/* Structural Utilities */
 function removePricing(i){siteData.pricing.splice(i,1);renderAdminPricing()}
 function savePricing(){saveData();renderPricing();showMsg('pricingMsg','✓ Pricing saved!','success')}
 
@@ -244,11 +240,9 @@ function showMsg(id,text,type){
   el.textContent=text;el.className='admin-msg '+type;
   setTimeout(()=>el.className='admin-msg',3000);
 }
-// --- DYNAMIC ADMIN THEME TOGGLE FUNCTION ---
 function toggleAdminTheme() {
     const adminBox = document.getElementById('adminBox');
     const themeCheckbox = document.getElementById('adminThemeCheckbox');
-    
     if (themeCheckbox.checked) {
         adminBox.classList.add('admin-neon-theme');
         localStorage.setItem('adminTheme', 'neon');
@@ -257,15 +251,13 @@ function toggleAdminTheme() {
         localStorage.setItem('adminTheme', 'default');
     }
 }
-
-// Admin panel kholte hi puraani saved theme check karne ke liye (Auto-Load)
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('adminTheme');
     const themeCheckbox = document.getElementById('adminThemeCheckbox');
     const adminBox = document.getElementById('adminBox');
-    
     if (savedTheme === 'neon' && themeCheckbox && adminBox) {
         themeCheckbox.checked = true;
         adminBox.classList.add('admin-neon-theme');
     }
 });
+                          
